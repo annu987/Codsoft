@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Anaan - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f8f9fa; /* Very light gray */
+            color: #343a40; /* Dark gray for text */
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #2c3e50; /* Dark blue-gray */
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            margin: 0;
+            font-size: 1.8rem;
+            color: white;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar li {
+            margin-left: 25px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #b0e0e6; /* Powder blue on hover for links */
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #007bff, #00bfff); /* Blue gradient */
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            box-shadow: inset 0 -5px 15px rgba(0,0,0,0.1);
+        }
+
+        .hero-section h2 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero-section p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        section h3 {
+            text-align: center;
+            font-size: 2.8rem;
+            color: #2c3e50;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        /* Education Section Specific Styles */
+        .education-section {
+            background-color: #ffffff;
+        }
+
+        .education-card {
+            background-color: #e0e6ec; /* Soft gray-blue background */
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .education-card h4 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .education-card p {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: #495057;
+        }
+        .education-card p strong {
+            color: #007bff;
+        }
+
+
+        /* About Section Specific Styles */
+        .about-section {
+            background-color: #f8f9fa;
+        }
+
+        .about-section p {
+            font-size: 1.15rem;
+            text-align: justify;
+            margin-bottom: 25px;
+            color: #495057;
+            padding: 0 20px; /* Add horizontal padding for readability on smaller screens */
+        }
+
+        .about-section h4 {
+            text-align: center;
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        /* Skills Section Specific Styles */
+        .skills-section {
+            background-color: #ffffff;
+        }
+
+        .skills-grid {
+            display: grid; /* Use grid for more control */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid columns */
+            gap: 25px; /* Space between skill cards */
+            margin-top: 30px;
+        }
+
+        .skill-card {
+            background-color: #e0e6ec; /* Soft gray-blue */
+            color: #343a40;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column; /* Stack icon and text */
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer; /* Indicate clickability */
+            height: 120px; /* Fixed height for uniformity */
+        }
+
+        .skill-card i {
+            font-size: 3rem; /* Larger icon size */
+            margin-bottom: 10px;
+            color: #2c3e50; /* Icon color */
+            transition: color 0.3s ease;
+        }
+
+        .skill-card:hover {
+            background-color: #007bff; /* Primary blue on hover */
+            color: white;
+            transform: translateY(-8px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+        }
+        .skill-card:hover i {
+            color: white; /* Icon also turns white on hover */
+        }
+
+        .skills-coming-soon {
+            text-align: center;
+            font-style: italic;
+            color: #6c757d;
+            margin-top: 40px;
+            font-size: 1rem;
+        }
+
+        /* Modal (Pop-up) Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000; /* Above all other content */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .modal-content h4 {
+            color: #007bff;
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .modal-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #495057;
+            text-align: justify;
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #6c757d;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .modal-close-btn:hover {
+            color: #343a40;
+        }
+
+        /* Projects Section Specific Styles */
+        .projects-section {
+            background-color: #f8f9fa;
+        }
+
+        .project-card {
+            background-color: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h4 {
+            color: #007bff;
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .project-card p {
+            font-size: 1.15rem;
+            margin-bottom: 30px;
+            color: #5a6268;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        /* Contact Section Specific Styles */
+        .contact-section {
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .contact-section p {
+            font-size: 1.15rem;
+            margin-bottom: 40px;
+            color: #495057;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-info p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .social-icons a {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+            transform: translateY(-5px);
+        }
+
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design Adjustments */
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navbar ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .navbar li {
+                margin: 0 10px 10px 10px;
+            }
+
+            .hero-section {
+                padding: 100px 20px;
+                min-height: 250px;
+            }
+
+            .hero-section h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero-section p {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            section h3 {
+                font-size: 2rem;
+            }
+
+            .education-card {
+                padding: 30px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 15px;
+            }
+            .skill-card {
+                padding: 15px;
+                height: 100px;
+                font-size: 0.9rem;
+            }
+            .skill-card i {
+                font-size: 2.5rem;
+            }
+
+            .project-card, .skill-tag {
+                margin: 15px auto;
+                max-width: 95%;
+            }
+
+            .contact-info p {
+                flex-direction: column;
+            }
+
+            .social-icons {
+                gap: 20px;
+            }
+            .social-icons a {
+                font-size: 2.2rem;
+            }
+            .modal-content {
+                padding: 30px;
+            }
+            .modal-content h4 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Mohammed Anaan</h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <h2>Hi, I'm Mohammed Anaan</h2>
+            <p>An Aspiring Full Stack Web Developer leveraging AI/ML for innovative solutions.</p>
+        </div>
+    </section>
+
+    <section id="education" class="education-section">
+        <div class="container">
+            <h3>My Academic Journey</h3>
+            <div class="education-card">
+                <h4>St. Peter's Engineering College</h4>
+                <p><strong>Current Status:</strong> 2nd Year, 1st Semester, Computer Science Engineering (AIML)</p>
+                <p><strong>Expected Graduation:</strong> 2028</p>
+                <p>My studies here are providing a strong foundation in core computer science principles, with a specialized focus on Artificial Intelligence and Machine Learning, preparing me for the innovative demands of the tech industry.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h3>About Me</h3>
+            <p>
+                As a dynamic 2nd-year CSE student specializing in Artificial Intelligence and Machine Learning at St. Peter's Engineering College, my academic journey is centered around building robust and intelligent software solutions. I am deeply passionate about leveraging technology to solve real-world problems and constantly seek opportunities to expand my knowledge and practical skills in the ever-evolving tech landscape.
+            </p>
+            <p>
+                My ultimate goal is to become a Full Stack Web Developer, capable of crafting seamless and powerful applications from front-end user interfaces to complex back-end systems. My proficiency in C and Java, combined with a growing expertise in web technologies, positions me to embark on challenging projects that drive innovation and deliver exceptional user experiences. Expected to graduate in 2028, I am eager to contribute to forward-thinking teams and impactful initiatives.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h3>My Core Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-card" data-skill="C">
+                    <i class="fas fa-cuttlefish"></i>
+                    <span>C</span>
+                </div>
+                <div class="skill-card" data-skill="Java">
+                    <i class="fab fa-java"></i>
+                    <span>Java</span>
+                </div>
+                <div class="skill-card" data-skill="HTML">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML</span>
+                </div>
+                <div class="skill-card" data-skill="CSS">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS</span>
+                </div>
+                <div class="skill-card" data-skill="JavaScript">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-card" data-skill="GitHub">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </div>
+                <div class="skill-card" data-skill="VS Code">
+                    <i class="fas fa-code"></i>
+                    <span>VS Code</span>
+                </div>
+            </div>
+            <p class="skills-coming-soon">
+                More skills coming soon as I continue my learning journey!
+            </p>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h3>My Projects</h3>
+            <div class="project-card">
+                <h4>Academic Compass</h4>
+                <p>
+                    An interactive web application built with HTML, CSS, and JavaScript, designed to empower students to efficiently manage their academic schedules, deadlines, and study time, directly contributing to <strong>SDG 4: Quality Education</strong>.
+                </p>
+                <a href="https://annu987.github.io/SmartSchedulerProject/" class="btn view-project-btn">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h3>Get In Touch</h3>
+            <p>Feel free to reach out for collaborations or opportunities!</p>
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:zeb.begum786@gmail.com">zeb.begum786@gmail.com</a> | <a href="mailto:24bk1a66bt@stpetershyd.com">24bk1a66bt@stpetershyd.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+919246710026">+91 9246710026</a></p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/mohammed-anaan-b06b90360/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/annu987" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mohammed Anaan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="skillModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h4 id="modalSkillTitle"></h4>
+            <div id="modalSkillDescription"></div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Skill Modal Logic
+        const skillCards = document.querySelectorAll('.skill-card');
+        const skillModal = document.getElementById('skillModal');
+        const modalSkillTitle = document.getElementById('modalSkillTitle');
+        const modalSkillDescription = document.getElementById('modalSkillDescription');
+        const modalCloseBtn = document.querySelector('.modal-close-btn');
+
+        const skillDescriptions = {
+            "C": {
+                title: "C Programming",
+                description: "<p>My foundational understanding of C programming allows me to grasp core computing concepts, memory management, and data structures. It provides a solid base for low-level system programming and efficient algorithm implementation, crucial for understanding how software interacts with hardware.</p>"
+            },
+            "Java": {
+                title: "Java Programming",
+                description: "<p>Proficient in Java, I can develop robust, object-oriented applications suitable for various platforms. My skills include working with Java's extensive libraries and frameworks, enabling me to build scalable and maintainable software solutions, from enterprise systems to Android applications.</p>"
+            },
+            "HTML": {
+                title: "HTML5",
+                description: "<p>I master HTML5 to structure the content of web pages effectively and semantically. My expertise ensures that websites are well-organized, accessible, and ready to be styled and made interactive, forming the backbone of any web project.</p>"
+            },
+            "CSS": {
+                title: "CSS3",
+                description: "<p>Using CSS3, I design visually appealing and responsive user interfaces, transforming raw HTML into engaging web experiences. I am skilled in creating layouts, applying styles, and implementing animations to ensure a consistent and attractive look across devices.</p>"
+            },
+            "JavaScript": {
+                title: "JavaScript",
+                description: "<p>My JavaScript skills bring interactivity and dynamic functionality to web pages, enabling rich user experiences. I am capable of implementing complex client-side logic, handling events, and interacting with APIs to build modern, responsive web applications.</p>"
+            },
+            "GitHub": {
+                title: "GitHub & Version Control",
+                description: "<p>I effectively utilize GitHub for version control and collaborative development. My proficiency includes branching, merging, pull requests, and managing repositories, ensuring efficient teamwork and organized project history, essential for professional software development.</p>"
+            },
+            "VS Code": {
+                title: "VS Code (Integrated Development Environment)",
+                description: "<p>I leverage Visual Studio Code as my primary IDE, utilizing its powerful features for efficient coding, debugging, and project management. Its extensive ecosystem of extensions and integrated terminal significantly boosts my development workflow across various programming languages.</p>"
+            }
+        };
+
+        skillCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const skillName = card.dataset.skill;
+                const skillInfo = skillDescriptions[skillName];
+                if (skillInfo) {
+                    modalSkillTitle.textContent = skillInfo.title;
+                    modalSkillDescription.innerHTML = skillInfo.description;
+                    skillModal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+                }
+            });
+        });
+
+        modalCloseBtn.addEventListener('click', () => {
+            skillModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+
+        // Close modal if clicked outside content
+        skillModal.addEventListener('click', (e) => {
+            if (e.target === skillModal) {
+                skillModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>
