@@ -1,0 +1,279 @@
+/* 🔰 Navbar Styling */
+.navbar {
+  background: #eaffea;
+  box-shadow: 0 0 12px rgba(0, 255, 120, 0.4);
+  padding: 0.8rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  width: 50px;
+  filter: drop-shadow(0 0 5px #00c851);
+}
+
+.logo-text span {
+  font-size: 1.5rem;
+  color: #004d00;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(0, 255, 120, 0.4);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #004d00;
+  font-weight: 500;
+  transition: 0.3s;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.nav-links li a:hover {
+  background-color: #00c851;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 255, 120, 0.6);
+}
+
+/* 🔰 Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.site-header img {
+  width: 200px;
+  margin: 2rem auto;
+  display: block;
+  box-shadow: 0 0 15px rgba(0, 200, 100, 0.8);
+  border-radius: 8px;
+}
+
+.site-header {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* 🔳 Body Background & Text */
+body {
+  background: #ffffff;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* 🌟 Hero Section */
+.hero {
+  background: linear-gradient(to right, #e8ffe8, #ccffcc);
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: #004d00;
+  box-shadow: 0 0 15px rgba(0, 255, 120, 0.3);
+}
+
+/* ✅ Hero Heading with Logo (fixed + cleaned) */
+.hero-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.hero-heading .hero-logo {
+  width: 60px;
+  height: auto;
+  filter: drop-shadow(0 0 6px #00c851);
+}
+
+.hero-heading h1 {
+  font-size: 2.5rem;
+  color: #004d00;
+  margin: 0;
+  text-shadow: 0 0 8px rgba(0, 200, 100, 0.5);
+}
+
+/* 🟩 Call-to-action Buttons */
+.cta {
+  background: #00c851;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 200, 100, 0.8);
+  transition: 0.3s ease;
+}
+
+.cta:hover {
+  background: #00e676;
+  box-shadow: 0 0 20px rgba(0, 255, 120, 1);
+  transform: scale(1.05);
+}
+
+/* 📄 Section Basics */
+section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+
+section h2 {
+  color: #00c851;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 6px rgba(0, 200, 100, 0.4);
+}
+
+/* 🧃 Product Cards */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product {
+  position: relative;
+  background: #f0fff0;
+  padding: 1.5rem;
+  border-radius: 15px;
+  width: 250px;
+  box-shadow: 0 0 12px rgba(0, 200, 100, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  z-index: 1;
+}
+
+.product:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 255, 120, 0.5), 0 0 15px rgba(0, 255, 120, 0.4) inset;
+}
+
+.product img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* 🌱 Why Boxes */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.why-box {
+  background: #f8fff8;
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 200, 100, 0.2);
+  transition: 0.3s;
+}
+
+.why-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0, 255, 120, 0.5);
+}
+
+/* 🧾 Categories */
+.categories ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+}
+
+.categories li {
+  margin: 10px 0;
+  color: #006622;
+  text-shadow: 0 0 5px rgba(0, 255, 120, 0.3);
+}
+
+/* 💬 Testimonials */
+.testimonial-box {
+  background: #f0fff0;
+  margin: 1rem auto;
+  padding: 1rem 1.5rem;
+  max-width: 600px;
+  font-style: italic;
+  border-left: 5px solid #00c851;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 200, 100, 0.15);
+  transition: 0.3s ease-in-out;
+}
+
+.testimonial-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 120, 0.4);
+}
+
+/* 📞 Contact / Join Section */
+.join {
+  background: #eaffea;
+  border-top: 2px solid #00c851;
+  border-bottom: 2px solid #00c851;
+  box-shadow: 0 0 10px rgba(0, 200, 100, 0.3) inset;
+  border-radius: 10px;
+}
+
+.join a {
+  display: inline-block;
+  margin: 8px 0;
+}
+
+/* 🔚 Footer */
+footer {
+  background: #f8fff8;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid #ccc;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .product-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    width: 90%;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}
+section {
+  scroll-margin-top: 80px; /* adjust if your navbar height is bigger */
+}
+#why,
+#products,
+#testimonials {
+  scroll-margin-top: 80px;
+}
