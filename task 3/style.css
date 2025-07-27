@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Orbitron:wght@400;700&display=swap');
+
+:root {
+  --neon-blue: #00e0ff;
+  --neon-purple: #ff00e0;
+  --neon-green: #00ff66;
+  --neon-red: #ff3366;
+  --neon-yellow: #ffff33;
+  --bg-dark: #0a0a0a;
+  --calculator-base: #121212;
+  --button-base: #1e1e1e;
+  --button-hover: #2c2c2c;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(circle at center, var(--bg-dark), #000);
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 350px;
+  background: var(--calculator-base);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 224, 255, 0.3);
+  border: 2px solid rgba(0, 224, 255, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.display {
+  width: 100%;
+  height: 60px;
+  background: black;
+  color: var(--neon-green);
+  font-family: 'Major Mono Display', monospace;
+  font-size: 2.2em;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  text-align: right;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 10px var(--neon-green);
+  overflow-x: auto;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  font-size: 1.4em;
+  padding: 18px;
+  border: none;
+  border-radius: 12px;
+  background: var(--button-base);
+  color: #c0c0c0;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+button:hover {
+  background: var(--button-hover);
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 224, 255, 0.4);
+}
+
+/* Special buttons */
+.clear, .delete {
+  color: var(--neon-red);
+  background: rgba(255, 51, 102, 0.1);
+}
+
+.operator {
+  color: var(--neon-purple);
+  background: rgba(255, 0, 224, 0.1);
+}
+
+.equal {
+  grid-column: span 2;
+  background: var(--neon-green);
+  color: #000;
+  font-weight: bold;
+  font-size: 1.6em;
+  box-shadow: 0 0 12px var(--neon-green);
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+.decimal {
+  color: var(--neon-yellow);
+}
+
+/* Responsive fix */
+@media (max-width: 400px) {
+  .display {
+    font-size: 1.8em;
+    height: 50px;
+  }
+
+  button {
+    padding: 14px;
+    font-size: 1.2em;
+  }
+
+  .equal {
+    font-size: 1.4em;
+  }
+}
